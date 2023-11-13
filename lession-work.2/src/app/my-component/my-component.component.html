@@ -1,0 +1,27 @@
+<p>my-component works!</p>
+@if (isLogin) {
+    <p>
+        {{username}} Hello!
+    </p>
+}@else {
+    <p>
+        avtorization, please
+    </p>
+}
+@for (user of users; track user.id){
+    <h3> {{ user.name }} </h3>
+}
+
+<button class="btn" (click) = 'greet()'>Click 4 me</button>
+
+
+<form [formGroup]="profileForm" (ngSubmit)="sumbit()">
+    <input type="text" formControlName="name">
+    <input type="email" formControlName="email">
+    <button type = 'submit'>okey</button>
+</form>
+<h2>
+    Data is Form
+</h2>
+<p> {{profileForm.value.name}} </p>
+<p> {{profileForm.value.email}} </p>
